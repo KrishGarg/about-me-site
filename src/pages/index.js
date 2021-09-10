@@ -1,9 +1,12 @@
 import React from "react";
 
+// Components
+import Layout from "../components/Layout";
+
 const IndexPage = () => {
   return (
     <div>
-      <div>hi</div>
+      <Layout>hi</Layout>
     </div>
   );
 };
