@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "My Gatsby Site",
+    siteUrl: "https://www.krishgarg.ga",
+    title: "About Krish Garg's",
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -9,10 +9,22 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: "blogs",
+        path: "./blogs",
       },
-      __key: "pages",
+      __key: "blogs",
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "AboutMe",
+        short_name: "AboutMe",
+        start_url: "/",
+        background_color: "#f7f0eb",
+        theme_color: "#a2466c",
+        display: "standalone",
+        icon: "src/images/icon.png",
+      },
     },
   ],
 };
