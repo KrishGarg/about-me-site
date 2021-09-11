@@ -2,7 +2,7 @@ import React from "react";
 
 // Components
 import Layout from "../components/Layout";
-import { Link } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 // Styles
 import {
@@ -36,9 +36,15 @@ const IndexPage = () => {
               >
                 Github
               </a>
-              <Link to="/blog" className={btn}>
+              <AniLink
+                color="#1e1e1e"
+                duration={1}
+                paintDrip
+                to="/blog"
+                className={btn}
+              >
                 Blogs
-              </Link>
+              </AniLink>
             </div>
           </div>
         </section>

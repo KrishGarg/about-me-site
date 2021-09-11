@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 
 // Styles
 import {
@@ -10,6 +10,7 @@ import {
 
 // Components
 import Layout from "../../components/Layout";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const BlogPost = ({ data }) => {
   const {
@@ -22,9 +23,9 @@ const BlogPost = ({ data }) => {
   return (
     <Layout title={title}>
       <div className={buttonStyle}>
-        <Link to="/">
+        <AniLink color="#1e1e1e" duration={1} paintDrip to="/">
           <button>Back to Home</button>
-        </Link>
+        </AniLink>
       </div>
       <div className={post}>
         <div className={titleStyle}>{title}</div>

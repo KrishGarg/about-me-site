@@ -4,6 +4,7 @@ module.exports = {
     title: "About Krish Garg",
   },
   plugins: [
+    "gatsby-plugin-transition-link",
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-filesystem",

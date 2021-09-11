@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 
 // Componenets
 import Layout from "../../components/Layout";
-import { Link } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 // Styles
 import {
@@ -23,16 +23,19 @@ const BlogList = ({
   return (
     <Layout title="Blogs">
       <div className={buttonStyle}>
-        <Link to="/">
+        <AniLink color="#1e1e1e" duration={1} paintDrip to="/">
           <button>Back to Home</button>
-        </Link>
+        </AniLink>
       </div>
       <div className={wrapper}>
         <header className={heading}>Blogs</header>
         <hr />
         {posts.map((post) => {
           return (
-            <Link
+            <AniLink
+              color="#1e1e1e"
+              duration={1}
+              paintDrip
               to={`/blog/${post.frontmatter.slug}`}
               key={post.id}
               className={postItem}
@@ -40,7 +43,7 @@ const BlogList = ({
               <div className={postTitle}>{post.frontmatter.title}</div>
               <div className={postDate}>{post.frontmatter.date}</div>
               <hr />
-            </Link>
+            </AniLink>
           );
         })}
       </div>
