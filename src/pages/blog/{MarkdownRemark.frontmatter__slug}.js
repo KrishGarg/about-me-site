@@ -21,11 +21,11 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout title={title}>
-      <Link to="/">
-        <div className={buttonStyle}>
+      <div className={buttonStyle}>
+        <Link to="/">
           <button>Back to Home</button>
-        </div>
-      </Link>
+        </Link>
+      </div>
       <div className={post}>
         <div className={titleStyle}>{title}</div>
         {date}

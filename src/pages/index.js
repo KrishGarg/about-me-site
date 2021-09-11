@@ -2,6 +2,7 @@ import React from "react";
 
 // Components
 import Layout from "../components/Layout";
+import { Link } from "gatsby";
 
 // Styles
 import {
@@ -35,6 +36,9 @@ const IndexPage = () => {
               >
                 Github
               </a>
+              <Link to="/blog" className={btn}>
+                Blogs
+              </Link>
             </div>
           </div>
         </section>

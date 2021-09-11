@@ -1,17 +1,38 @@
 @use "./variables" as *;
 
-.post {
+.wrapper {
   color: white;
   text-align: center;
-  padding: 0 4rem;
+  padding: 0 2rem;
+  margin: 1rem 0;
 }
 
-.title {
-  margin: 0.5rem 0;
+.heading {
   font-size: 2.5rem;
+  margin: 1rem 0;
 }
 
-.btn {
+.post-item {
+  display: inline-block;
+  width: max-content;
+  color: white;
+  text-decoration: none;
+  &:hover {
+    color: $text-d;
+    cursor: pointer;
+  }
+}
+
+.post-title {
+  font-weight: bold;
+}
+
+.post-date {
+  margin: 0.2rem 0;
+  font-size: 0.7rem;
+}
+
+.button-style {
   button {
     margin-left: 4rem;
     outline: none;
@@ -32,17 +53,15 @@
 }
 
 @media (max-width: 610px) {
-  .btn {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .button-style {
     text-align: center;
     button {
       margin: 0.3rem 0;
       padding: 0.5rem;
     }
-  }
-  .post {
-    padding: 0 1rem;
-  }
-  .title {
-    font-size: 2rem;
   }
 }
