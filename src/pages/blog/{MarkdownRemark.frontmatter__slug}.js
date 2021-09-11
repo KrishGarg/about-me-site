@@ -22,7 +22,9 @@ const BlogPost = ({ data }) => {
   return (
     <Layout title={title}>
       <Link to="/">
-        <button className={buttonStyle}>Back to Home</button>
+        <div className={buttonStyle}>
+          <button>Back to Home</button>
+        </div>
       </Link>
       <div className={post}>
         <div className={titleStyle}>{title}</div>

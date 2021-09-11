@@ -5,12 +5,7 @@
 }
 
 html {
-  background: linear-gradient(
-    to bottom right,
-    $bg-dark-d,
-    $bg-dark-d,
-    $bg-dark-l
-  );
-  height: 100vh;
+  background: rgb(30, 30, 30);
+  background-repeat: initial;
   user-select: none;
 }
