@@ -14,7 +14,7 @@ import {
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Layout title="Home">
       <main>
         <section>
           <div className={greet}>
