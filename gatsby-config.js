@@ -5,7 +5,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-sass",
-    "gatsby-transformer-remark",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -14,6 +13,7 @@ module.exports = {
       },
       __key: "blogs",
     },
+    "gatsby-transformer-remark",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
