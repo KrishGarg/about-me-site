@@ -21,6 +21,10 @@
     color: $text-d;
     cursor: pointer;
   }
+  &:hover,
+  &:active {
+    background-color: $bg-dark-l;
+  }
 }
 
 .post-title {
@@ -43,6 +47,8 @@
     color: white;
     padding: 0.3rem;
     font-weight: bold;
+    transition: background-color $trans-time ease-in-out;
+    transition: color $trans-time ease-in-out;
 
     &:hover {
       color: rgb(22, 17, 17);
