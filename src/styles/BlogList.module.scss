@@ -20,10 +20,7 @@
   &:hover {
     color: $text-d;
     cursor: pointer;
-  }
-  &:hover,
-  &:active {
-    background-color: $bg-dark-l;
+    text-decoration: underline;
   }
 }
 
@@ -69,6 +66,13 @@
     button {
       margin: 0.3rem 0;
       padding: 0.5rem;
+    }
+  }
+
+  .post-item {
+    &:hover,
+    &:active {
+      background-color: $bg-dark-l;
     }
   }
 }
