@@ -12,8 +12,9 @@
 }
 
 .btn {
+  display: contents;
   button {
-    margin-left: 4rem;
+    margin: 0 0.2rem;
     outline: none;
     border-radius: 0.2rem;
     border: 2px solid white;
@@ -31,11 +32,36 @@
   }
 }
 
+.html-style {
+  a {
+    color: $text-d;
+
+    &:hover {
+      color: $text-l;
+    }
+  }
+
+  p,
+  a {
+    user-select: text;
+    &::selection {
+      background: $text-l;
+      color: $bg-dark-l;
+    }
+  }
+}
+
+.btns-flex {
+  display: flex;
+  justify-content: left;
+  margin-left: 4rem;
+}
+
 @media (max-width: 610px) {
   .btn {
     text-align: center;
     button {
-      margin: 0.3rem 0;
+      margin: 0.2rem 0.2rem;
       padding: 0.5rem;
     }
   }
@@ -44,5 +70,12 @@
   }
   .title {
     font-size: 2rem;
+  }
+  .html-style {
+    font-size: 0.8rem;
+  }
+  .btns-flex {
+    margin: 0;
+    justify-content: center;
   }
 }

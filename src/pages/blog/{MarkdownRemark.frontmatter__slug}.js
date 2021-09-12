@@ -6,6 +6,8 @@ import {
   post,
   title as titleStyle,
   btn as buttonStyle,
+  htmlStyle,
+  btnsFlex,
 } from "../../styles/BlogPage.module.scss";
 
 // Components
@@ -22,16 +24,34 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout title={title}>
-      <div className={buttonStyle}>
-        <AniLink color="#1e1e1e" duration={1} paintDrip to="/">
+      <div className={btnsFlex}>
+        <AniLink
+          className={buttonStyle}
+          hex="#1d1d1d"
+          duration={1}
+          paintDrip
+          to="/"
+        >
           <button>Back to Home</button>
+        </AniLink>
+        <AniLink
+          className={buttonStyle}
+          hex="#1d1d1d"
+          duration={1}
+          paintDrip
+          to="/blog"
+        >
+          <button>Back to Blogs</button>
         </AniLink>
       </div>
       <div className={post}>
         <div className={titleStyle}>{title}</div>
         {date}
 
-        <div dangerouslySetInnerHTML={{ __html: html }}></div>
+        <div
+          className={htmlStyle}
+          dangerouslySetInnerHTML={{ __html: html }}
+        ></div>
       </div>
     </Layout>
   );

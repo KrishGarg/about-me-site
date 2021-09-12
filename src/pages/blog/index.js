@@ -22,8 +22,14 @@ const BlogList = ({
 }) => {
   return (
     <Layout title="Blogs">
-      <div className={buttonStyle}>
-        <AniLink color="#1e1e1e" duration={1} paintDrip to="/">
+      <div>
+        <AniLink
+          hex="#1d1d1d"
+          duration={1}
+          paintDrip
+          to="/"
+          className={buttonStyle}
+        >
           <button>Back to Home</button>
         </AniLink>
       </div>
@@ -33,7 +39,7 @@ const BlogList = ({
         {posts.map((post) => {
           return (
             <AniLink
-              color="#1e1e1e"
+              hex="#1d1d1d"
               duration={1}
               paintDrip
               to={`/blog/${post.frontmatter.slug}`}

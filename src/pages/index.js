@@ -37,9 +37,9 @@ const IndexPage = () => {
                 Github
               </a>
               <AniLink
-                color="#1e1e1e"
-                duration={1}
                 paintDrip
+                hex="#1d1d1d"
+                duration={1}
                 to="/blog"
                 className={btn}
               >
