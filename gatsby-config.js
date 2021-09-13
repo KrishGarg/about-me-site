@@ -1,7 +1,13 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.krishgarg.ga",
-    title: "About Krish Garg",
+    title: "Krish Garg",
+    titleTemplate: "%s - About",
+    description:
+      "A site about me, Krish Garg. I post some blogs and will add some more info and projects of/about me in the future.",
+    url: "https://www.krishgarg.ga",
+    image: "/images/icon.png",
+    twitterUsername: "@KrishGa95586696",
   },
   plugins: [
     "gatsby-plugin-transition-link",
@@ -27,5 +33,15 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.krishgarg.ga",
+        sitemap: "https://www.krishgarg.ga/sitemap/sitemap-index.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    "gatsby-plugin-react-helmet",
   ],
 };
