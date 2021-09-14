@@ -1,12 +1,12 @@
 import React from "react";
 import "../styles/GlobalStyles.scss";
 
-import SEO from "./SEO";
+import Seo from "./SEO";
 
 const Layout = ({ children, title }) => {
   return (
     <>
-      <SEO />
+      <Seo />
       <title>Krish Garg - {title}</title>
       <div>{children}</div>
     </>
