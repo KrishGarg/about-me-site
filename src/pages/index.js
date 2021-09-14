@@ -35,7 +35,7 @@ const IndexPage = () => {
                 to="/about"
                 className={btn}
               >
-                About
+                About Me
               </AniLink>
               <AniLink
                 paintDrip

@@ -36,8 +36,15 @@ const About = () => {
           about myself and some of the stories related to technology and web
           development that happened with me. I find it pretty fun to read about
           people in Q&A style so this page will also be in Q&A style. All the
-          questions/points are listed below if you want to skip to any. <br />{" "}
-          PS: The{" "}
+          questions/points are listed below if you want to skip to any.
+          <br />
+          <br />
+          Update: I am typing this after I have typed the first 4 answers, and
+          this page is like a "Diary Entry" like we write (or wrote if you an
+          adult) in schools, so it is pretty interesting to read in my opinion.
+          <br />
+          <br />
+          Note: The{" "}
           <AniLink to="/blog" hex="#1d1d1d" duration={1} paintDrip>
             blogs
           </AniLink>{" "}
@@ -63,6 +70,14 @@ const About = () => {
               <a href="#how-i-improved-my-web-development-skills">
                 How I improved my web development skills?
               </a>
+            </li>
+            <li>
+              <a href="#how-am-i-gonna-further-improve">
+                How am I gonna further improve?
+              </a>
+            </li>
+            <li>
+              <a href="#the-small-story">The Small Story</a>
             </li>
           </ul>
         </div>
@@ -108,10 +123,10 @@ const About = () => {
           </a>
           . Till then, I only knew about the basics in programming like if-else,
           loops, variables, etc. and I knew a little of both Python and
-          Javascript. I have a <a href="#my-story-about-javascript">story</a> on
-          the Javascript part which I will talk about in a different question.
-          Then I got inspired by other's bots and wanted to make my own. I was
-          more comfortable with python so I used{" "}
+          Javascript. I have a <a href="#the-small-story">story</a> on the
+          Javascript part which I will talk about in a different question. Then
+          I got inspired by other's bots and wanted to make my own. I was more
+          comfortable with python so I used{" "}
           <a
             href="https://discordpy.readthedocs.io/en/stable/"
             target="_blank"
@@ -125,8 +140,8 @@ const About = () => {
           so many. When I started, I knew very little about python, but as I
           used more and more python, I researched more, and learned more. Now I
           think I can call myself intermediate+ in python. Thats how I {""}
-          <a href="#my-story-about-javascript">actually</a> got into
-          programming. The story continues in "
+          <a href="#the-small-story">actually</a> got into programming. The
+          story continues in "
           <a href="#how-i-got-into-web-development">
             How I got into web development?
           </a>
@@ -232,7 +247,107 @@ const About = () => {
           >
             Bootstrap
           </a>
+          , came from{" "}
+          <a
+            href="https://www.kevinpowell.co/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Kewin Powell
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://www.youtube.com/c/WebDevSimplified"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Web Dev Simplified
+          </a>
+          . Some honourable mentions to{" "}
+          <a
+            href="https://www.youtube.com/c/BenAwad97"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ben Awad
+          </a>
+          ,{" "}
+          <a
+            href="https://www.freecodecamp.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Free Code Camp
+          </a>
+          ,{" "}
+          <a
+            href="https://www.youtube.com/c/Fireship"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Fireship
+          </a>
+          ,{" "}
+          <a
+            href="https://www.youtube.com/c/KeepOnCoding"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            KeepOnCoding
+          </a>
+          ,{" "}
+          <a
+            href="https://stackoverflow.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            StackOverflow
+          </a>
+          ,{" "}
+          <a
+            href="https://www.w3schools.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            W3Schools
+          </a>{" "}
+          and of course{" "}
+          <a
+            href="https://www.google.co.in"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google
+          </a>
+          . Once I got a bit more comfortable with React, I learned{" "}
+          <a
+            href="https://www.gatsbyjs.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Gatsby
+          </a>
+          , which I am using right now to make this site, and{" "}
+          <a
+            href="https://nextjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Next.js
+          </a>
+          . I call these "Extended React Frameworks". So this is where I am
+          right now, learning web development.
         </div>
+        <div className={paraTitle} id="how-am-i-gonna-further-improve">
+          <a href="#how-am-i-gonna-further-improve">
+            How am I gonna further improve?
+          </a>
+        </div>
+        <div className={para}>Soon™</div>
+        <div className={paraTitle} id="the-small-story">
+          <a href="#the-small-story">The Small Story</a>
+        </div>
+        <div className={para}>Soon™</div>
       </div>
     </Layout>
   );
