@@ -28,14 +28,15 @@ const IndexPage = () => {
               with web development.
             </p>
             <div className={btns}>
-              <a
-                rel="noreferrer"
-                href="https://github.com/KrishGarg"
-                target="_blank"
+              <AniLink
+                paintDrip
+                hex="#1d1d1d"
+                duration={1}
+                to="/about"
                 className={btn}
               >
-                Github
-              </a>
+                About
+              </AniLink>
               <AniLink
                 paintDrip
                 hex="#1d1d1d"
@@ -45,6 +46,14 @@ const IndexPage = () => {
               >
                 Blogs
               </AniLink>
+              <a
+                rel="noreferrer"
+                href="https://github.com/KrishGarg"
+                target="_blank"
+                className={btn}
+              >
+                Github
+              </a>
             </div>
           </div>
         </section>

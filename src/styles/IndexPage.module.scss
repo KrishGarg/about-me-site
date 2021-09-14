@@ -29,10 +29,13 @@ main {
 }
 
 .btns {
+  width: 90vw;
+  max-width: 15rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .btn {
