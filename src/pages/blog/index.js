@@ -20,7 +20,6 @@ const BlogList = ({
     allMdx: { nodes: posts },
   },
 }) => {
-  console.log(posts);
   return (
     <Layout title="Blogs">
       <div>
