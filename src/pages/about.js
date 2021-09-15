@@ -159,7 +159,7 @@ const About = () => {
           so I would recommend reading it before this as you might get confused.
           Then came a stage where I had to make a web dashboard for my discord
           bot but I was too scared as I had no experience in web development. I
-          only knew html and some css. By some css I mean only some properties,
+          only knew HTML and some CSS. By some CSS I mean only some properties,
           I didn't knew how to actually use them to make a site. So I{" "}
           <a
             href="https://www.merriam-webster.com/dictionary/avert"
@@ -195,7 +195,7 @@ const About = () => {
           </a>
           " so I would recommend reading it before this as you might get
           confused. So I started looking for some web development guides and
-          tutorials. Then I found out about the 3 big javascript frameworks,{" "}
+          tutorials. Then I found out about the 3 big Javascript frameworks,{" "}
           <a
             href="https://reactjs.org/"
             target="_blank"
@@ -221,8 +221,8 @@ const About = () => {
           </a>
           . As I said in the "
           <a href="#how-i-got-into-programming">How I got into programming?</a>"{" "}
-          question, I learn on-the-go. So I continued with the javascript
-          frameworks by only knowing some basics of javascript. I searched up
+          question, I learn on-the-go. So I continued with the Javascript
+          frameworks by only knowing some basics of Javascript. I searched up
           some quick tutorials on youtube for all three frameworks. I tried out
           all of them, but felt most comfortable with React. I saw many react
           courses, but the one which got me hooked to it, was the one by{" "}
@@ -236,9 +236,9 @@ const About = () => {
           . It is in hindi so if you don't speak/understand hindi, it might not
           be for you, but it is an excellent course. While I was watching his
           course, side-by-side, I was also sharpening my CSS and Javascript. For
-          javascript, I did nothing but just look around for some people's
+          Javascript, I did nothing but just look around for some people's
           projects and google anything which looked new to me. For CSS, mainly
-          the inspiration and motivation to actually write my own css instead of
+          the inspiration and motivation to actually write my own CSS instead of
           using a pre-built stylesheet like{" "}
           <a
             href="https://getbootstrap.com/"
@@ -343,7 +343,113 @@ const About = () => {
             How am I gonna further improve?
           </a>
         </div>
-        <div className={para}>Soon™</div>
+        <div className={para}>
+          Just like everyone, I am not 100% sure how am I gonna improve. What I
+          think should be my priority is just make more and more sites. I was
+          thinking maybe I can try freelancing but it is crazy hard and may even
+          be impossible to freelance when you are 15 years old in India. Other
+          than that I think I would try some sites which give front end
+          challenges to strengthen my skills with raw Javascript and CSS. Also
+          as I want to end up as a full-stack developer, I will have to make
+          projects with both front-end and back-end, so I will probably go with
+          the{" "}
+          <a
+            href="https://www.mongodb.com/mern-stack"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MERN stack
+          </a>{" "}
+          or{" "}
+          <a
+            href="https://nextjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Next.js
+          </a>
+          . And whenever I would want to practice just front-end, I will
+          probably stay away from{" "}
+          <a
+            href="https://reactjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            React
+          </a>{" "}
+          at the beginning as it would be harder to port back to simple
+          Javascript and even harder to switch to other frameworks in the future
+          as there is a high chance that I learn{" "}
+          <a
+            href="https://angular.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Angular
+          </a>{" "}
+          (I don't think I will try{" "}
+          <a
+            href="https://v3.vuejs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vue
+          </a>{" "}
+          as I just don't get the vibe from it).
+          <br />
+          So in brief, for just front-end, I would try to make things in raw
+          HTML, CSS and Javascript and only after I strengthen them, I will try
+          more of{" "}
+          <a
+            href="https://reactjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            React
+          </a>{" "}
+          and maybe{" "}
+          <a
+            href="https://angular.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Angular
+          </a>{" "}
+          in the future. For just back-end, I have no idea on what I can do. And
+          for full stack, I will try to make more projects of the{" "}
+          <a
+            href="https://www.mongodb.com/mern-stack"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MERN stack
+          </a>{" "}
+          or{" "}
+          <a
+            href="https://nextjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Next.js
+          </a>{" "}
+          and maybe{" "}
+          <a
+            href="https://www.mongodb.com/mean-stack"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MEAN stack
+          </a>{" "}
+          if I learn{" "}
+          <a
+            href="https://angular.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Angular
+          </a>
+          .
+        </div>
         <div className={paraTitle} id="the-small-story">
           <a href="#the-small-story">The Small Story</a>
         </div>
