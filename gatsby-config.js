@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://www.krishgarg.ga",
     title: "Krish Garg",
-    titleTemplate: "%s - About",
+    titleTemplate: "Krish Garg - %s",
     description:
       "A site about me, Krish Garg. I post some blogs and will add some more info and projects of/about me in the future.",
     url: "https://www.krishgarg.ga",

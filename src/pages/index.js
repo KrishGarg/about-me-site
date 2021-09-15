@@ -54,6 +54,15 @@ const IndexPage = () => {
               >
                 Github
               </a>
+              <AniLink
+                paintDrip
+                hex="#1d1d1d"
+                duration={1}
+                to="/contactme"
+                className={btn}
+              >
+                Contact Me
+              </AniLink>
             </div>
           </div>
         </section>

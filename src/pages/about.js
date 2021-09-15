@@ -18,7 +18,7 @@ import {
 
 const About = () => {
   return (
-    <Layout>
+    <Layout title="About">
       <AniLink
         className={buttonStyle}
         to="/"

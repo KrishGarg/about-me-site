@@ -3,6 +3,7 @@ import "../styles/GlobalStyles.scss";
 
 import Seo from "./SEO";
 import { MDXProvider } from "@mdx-js/react";
+import { Helmet } from "react-helmet";
 
 // Shortcode components for blogs
 import AniLink from "gatsby-plugin-transition-link/AniLink";
@@ -13,11 +14,15 @@ const Layout = ({ children, title }) => {
   };
 
   return (
-    <MDXProvider components={shortcodes}>
-      <Seo />
-      <title>Krish Garg - {title}</title>
-      <div>{children}</div>
-    </MDXProvider>
+    <>
+      <Helmet>
+        <script src="https://s.pageclip.co/v1/pageclip.js" />
+      </Helmet>
+      <MDXProvider components={shortcodes}>
+        <Seo title={title} />
+        <div>{children}</div>
+      </MDXProvider>
+    </>
   );
 };
 
