@@ -20,7 +20,7 @@ module.exports = {
       },
       __key: "blogs",
     },
-    "gatsby-transformer-remark",
+    "gatsby-plugin-mdx",
     {
       resolve: "gatsby-plugin-manifest",
       options: {

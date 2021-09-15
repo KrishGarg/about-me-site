@@ -13,12 +13,13 @@ import {
 // Components
 import Layout from "../../components/Layout";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 const BlogPost = ({ data }) => {
   const {
-    markdownRemark: {
+    mdx: {
+      body: html,
       frontmatter: { date, title },
-      html,
     },
   } = data;
 
@@ -48,23 +49,20 @@ const BlogPost = ({ data }) => {
         <div className={titleStyle}>{title}</div>
         {date}
 
-        <div
-          className={htmlStyle}
-          dangerouslySetInnerHTML={{ __html: html }}
-        ></div>
+        <MDXRenderer className={htmlStyle}>{html}</MDXRenderer>
       </div>
     </Layout>
   );
 };
 
 export const query = graphql`
-  query ($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
+  query ($id: String) {
+    mdx(id: { eq: $id }) {
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         title
+        date(formatString: "MMMM D, YYYY")
       }
+      body
     }
   }
 `;

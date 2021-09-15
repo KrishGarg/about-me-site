@@ -17,9 +17,10 @@ import {
 
 const BlogList = ({
   data: {
-    allMarkdownRemark: { nodes: posts },
+    allMdx: { nodes: posts },
   },
 }) => {
+  console.log(posts);
   return (
     <Layout title="Blogs">
       <div>
@@ -59,12 +60,12 @@ const BlogList = ({
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         frontmatter {
-          date(formatString: "MMMM D, YYYY")
-          title
+          date(formatString: "MMMM DD, YYYY")
           slug
+          title
         }
         id
       }
