@@ -22,10 +22,21 @@
   align-items: center;
   margin: 0.5rem;
 
+  label {
+    margin: 0.3rem;
+  }
+
   input {
     font-size: 1rem;
     min-height: 1rem;
     width: 15rem;
+    border-radius: 0.5rem;
+    transition: box-shadow 300ms ease;
+
+    &:focus {
+      box-shadow: 0 0 7px 7px white;
+      outline: none;
+    }
 
     @media (max-width: 610px) {
       width: 80vw;
@@ -38,6 +49,13 @@
     height: 30vh;
     font-family: sans-serif;
     resize: none;
+    border-radius: 0.5rem;
+    transition: box-shadow 300ms ease;
+
+    &:focus {
+      box-shadow: 0 0 7px 7px white;
+      outline: none;
+    }
 
     @media (max-width: 610px) {
       width: 80vw;
@@ -64,6 +82,7 @@
 
   &:hover {
     color: $text-l;
+    cursor: pointer;
   }
 
   &:disabled {
