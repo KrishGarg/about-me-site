@@ -49,7 +49,9 @@ const BlogPost = ({ data }) => {
         <div className={titleStyle}>{title}</div>
         {date}
 
-        <MDXRenderer className={htmlStyle}>{html}</MDXRenderer>
+        <div className={htmlStyle}>
+          <MDXRenderer>{html}</MDXRenderer>
+        </div>
       </div>
     </Layout>
   );
