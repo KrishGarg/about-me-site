@@ -41,6 +41,15 @@ const IndexPage = () => {
                 paintDrip
                 hex="#1d1d1d"
                 duration={1}
+                to="/projects"
+                className={btn}
+              >
+                Projects
+              </AniLink>
+              <AniLink
+                paintDrip
+                hex="#1d1d1d"
+                duration={1}
                 to="/blog"
                 className={btn}
               >

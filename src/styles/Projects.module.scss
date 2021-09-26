@@ -1,0 +1,69 @@
+@use "./variables" as *;
+
+.button-style {
+  display: contents;
+  button {
+    margin-left: 4rem;
+    outline: none;
+    border-radius: 0.2rem;
+    border: 2px solid white;
+    background-color: $bg-dark-d;
+    color: white;
+    padding: 0.3rem;
+    font-weight: bold;
+    transition: background-color $trans-time ease-in-out;
+    transition: color $trans-time ease-in-out;
+
+    &:hover {
+      color: rgb(22, 17, 17);
+      background-color: white;
+      border-color: black;
+      cursor: pointer;
+    }
+  }
+  @media (max-width: 610px) {
+    text-align: center;
+    button {
+      margin: 0.3rem 0;
+      padding: 0.5rem;
+    }
+  }
+}
+
+.heading {
+  margin: 1rem 0;
+  padding: 0 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.project {
+  padding: 0.5rem;
+  border: 2px solid white;
+  margin: 0.5rem auto;
+  max-width: 15rem;
+  display: flex;
+  flex-direction: column;
+
+  * {
+    margin: 0.2rem;
+  }
+
+  a {
+    margin-top: auto;
+  }
+
+  .proj-title {
+    font-size: 1.5rem;
+  }
+
+  .proj-desc {
+  }
+}
