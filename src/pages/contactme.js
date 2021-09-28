@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Layout from "../components/Layout";
+import Button from "../components/Button";
 
 // Styles
 import {
@@ -9,7 +9,6 @@ import {
   formField,
   form as formStyle,
   submit,
-  buttonStyle,
 } from "../styles/ContactMe.module.scss";
 
 const ContactMe = () => {
@@ -50,15 +49,7 @@ const ContactMe = () => {
 
   return (
     <Layout title="Contact Me">
-      <AniLink
-        className={buttonStyle}
-        to="/"
-        hex="#1d1d1d"
-        duration={1}
-        paintDrip
-      >
-        <button>Back To Home</button>
-      </AniLink>
+      <Button to="/" text="Back To Home" />
       <div className={page}>
         <h2>Contact Me</h2>
         <hr width="100%" />

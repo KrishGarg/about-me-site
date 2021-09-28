@@ -1,0 +1,31 @@
+@use "./variables" as *;
+
+.button-style {
+  display: contents;
+  button {
+    margin-left: 4rem;
+    outline: none;
+    border-radius: 0.2rem;
+    border: 2px solid white;
+    background-color: $bg-dark-d;
+    color: white;
+    padding: 0.3rem;
+    font-weight: bold;
+    transition: background-color $trans-time ease-in-out;
+    transition: color $trans-time ease-in-out;
+
+    &:hover {
+      color: rgb(22, 17, 17);
+      background-color: white;
+      border-color: black;
+      cursor: pointer;
+    }
+  }
+  @media (max-width: 610px) {
+    text-align: center;
+    button {
+      margin: 0.3rem 0;
+      padding: 0.5rem;
+    }
+  }
+}

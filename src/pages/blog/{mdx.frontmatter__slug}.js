@@ -5,15 +5,15 @@ import { graphql } from "gatsby";
 import {
   post,
   title as titleStyle,
-  btn as buttonStyle,
   htmlStyle,
   btnsFlex,
+  btn,
 } from "../../styles/BlogPage.module.scss";
 
 // Components
 import Layout from "../../components/Layout";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import Button from "../../components/Button";
 
 const BlogPost = ({ data }) => {
   const {
@@ -26,24 +26,8 @@ const BlogPost = ({ data }) => {
   return (
     <Layout title={title}>
       <div className={btnsFlex}>
-        <AniLink
-          className={buttonStyle}
-          hex="#1d1d1d"
-          duration={1}
-          paintDrip
-          to="/"
-        >
-          <button>Back to Home</button>
-        </AniLink>
-        <AniLink
-          className={buttonStyle}
-          hex="#1d1d1d"
-          duration={1}
-          paintDrip
-          to="/blog"
-        >
-          <button>Back to Blogs</button>
-        </AniLink>
+        <Button to="/" text="Back To Home" className={btn} />
+        <Button to="/blog" text="Back To Blogs" className={btn} />
       </div>
       <div className={post}>
         <div className={titleStyle}>{title}</div>

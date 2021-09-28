@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 // Componenets
 import Layout from "../../components/Layout";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import Button from "../../components/Button";
 
 // Styles
 import {
@@ -12,7 +13,6 @@ import {
   postTitle,
   postDate,
   postItem,
-  buttonStyle,
 } from "../../styles/BlogList.module.scss";
 
 const BlogList = ({
@@ -23,15 +23,7 @@ const BlogList = ({
   return (
     <Layout title="Blogs">
       <div>
-        <AniLink
-          hex="#1d1d1d"
-          duration={1}
-          paintDrip
-          to="/"
-          className={buttonStyle}
-        >
-          <button>Back to Home</button>
-        </AniLink>
+        <Button to="/" text="Back To Home" />
       </div>
       <div className={wrapper}>
         <header className={heading}>Blogs</header>

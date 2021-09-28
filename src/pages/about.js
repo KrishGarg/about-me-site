@@ -3,6 +3,7 @@ import React from "react";
 // Components
 import Layout from "../components/Layout";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import Button from "../components/Button";
 
 // Styles
 import {
@@ -19,15 +20,7 @@ import {
 const About = () => {
   return (
     <Layout title="About">
-      <AniLink
-        className={buttonStyle}
-        to="/"
-        hex="#1d1d1d"
-        duration={1}
-        paintDrip
-      >
-        <button>Back To Home</button>
-      </AniLink>
+      <Button to="/" text="Back To Home" />
       <div className={title}>About Me</div>
       <hr />
       <div className={content}>
