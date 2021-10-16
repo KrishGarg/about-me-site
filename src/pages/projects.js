@@ -15,8 +15,6 @@ import {
 import projects from "../../projects.json";
 
 const Projects = () => {
-  console.log(projects);
-
   return (
     <Layout title="Projects">
       <div>
