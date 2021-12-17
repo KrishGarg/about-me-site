@@ -17,6 +17,7 @@ const Layout = ({ children, title }) => {
     <>
       <Helmet>
         <script src="https://s.pageclip.co/v1/pageclip.js" />
+        <script async src="https://arc.io/widget.min.js#3E5DEF3f"></script>
       </Helmet>
       <MDXProvider components={shortcodes}>
         <Seo title={title} />
