@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/arc-sw.js",
-      "destination": "https://arc.io/arc-sw.js"
-    }
-  ]
-}
