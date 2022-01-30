@@ -1,7 +1,14 @@
 import type { NextPage } from "next";
+import Button from "@/components/Button";
+import Navbar from "@/components/Navbar";
 
 const Home: NextPage = () => {
-  return <div className="font-bold text-2xl m-2 text-center">Hello World</div>;
+  return (
+    <>
+      <Navbar />
+      <Button>Test Btn</Button>
+    </>
+  );
 };
 
 export default Home;
