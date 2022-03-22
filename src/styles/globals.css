@@ -2,8 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .noTapHighlight {
+@layer components {
+  @supports (-webkit-text-stroke: 0) {
+    .stroked {
+      color: var(--color-bg);
+      -webkit-text-stroke: 1px var(--color-text);
+    }
+  }
+}
+
+@layer base {
+  body {
+    --color-bg: #232b2b;
+    --color-text: #f5f5f5;
+    color: var(--color-text);
+    font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
+
+    @apply bg-soft-black-300 m-0;
   }
 }

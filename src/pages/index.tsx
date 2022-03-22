@@ -1,12 +1,17 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import Button from "@/components/Button";
-import Navbar from "@/components/Navbar";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
   return (
     <>
-      <Navbar />
-      <Button>Test Btn</Button>
+      <Button onClick={() => router.push("/example")}>To Example</Button>
+      <Link href="/example">
+        <a>To Example</a>
+      </Link>
     </>
   );
 };
