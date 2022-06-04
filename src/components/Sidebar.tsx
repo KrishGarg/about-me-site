@@ -18,16 +18,23 @@ const variants: Variants = {
   },
 };
 
+let firstLoadDone = false;
+
 const Sidebar: FC = () => {
   const isMobile = useIsMobile();
   const controls = useAnimation();
   const [sidebar, setSidebar] = useRecoilState(sidebarState);
-  const componentDivRef = useRef(null);
+  const componentDivRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isMobile) {
       if (!sidebar) {
-        controls.start("hidden");
+        if (firstLoadDone) {
+          controls.start("hidden");
+        } else {
+          controls.set("hidden");
+          firstLoadDone = true;
+        }
       } else {
         controls.start("visible");
       }
@@ -55,12 +62,20 @@ const Sidebar: FC = () => {
     };
   }, [sidebar, setSidebar, isMobile]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      componentDivRef.current?.classList.remove("hidden");
+    }, 100); // to prevent a flicker of sidebar
+  }, []);
+
   return (
     <motion.div
       variants={variants}
       animate={controls}
       transition={{ duration: 0.5 }}
-      className="h-screen min-w-[13rem] md:min-w-[12rem] absolute md:static bg-soft-black-400 z-10 flex items-center flex-col"
+      className={`h-screen min-w-[13rem] md:min-w-[12rem] absolute md:static bg-soft-black-400 z-10 flex items-center flex-col ${
+        isMobile && "hidden"
+      }`}
       ref={componentDivRef}
     >
       <div className="flex justify-evenly items-center flex-col md:block">
