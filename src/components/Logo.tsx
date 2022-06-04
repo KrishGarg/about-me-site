@@ -3,7 +3,7 @@ import { FC, MouseEventHandler } from "react";
 
 const Logo: FC = () => {
   return (
-    <div>
+    <div className="select-none">
       <Link href="/">
         <a className="divide-y flex flex-col items-center m-2">
           <div className="font-medium text-3xl">Krish</div>

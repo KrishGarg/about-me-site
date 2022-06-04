@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-export const loading = atom({
-  key: "loading",
-  default: true,
+export const navbar = atom({
+  key: "navbar",
+  default: false,
 });

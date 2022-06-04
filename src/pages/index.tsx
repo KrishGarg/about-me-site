@@ -1,17 +1,17 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import Button from "@/components/Button";
-import { useRouter } from "next/router";
+
+import CloseNavbarButton from "@/components/CloseNavbar";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const Home: NextPage = () => {
-  const router = useRouter();
-
+  const isMobile = useIsMobile();
   return (
     <>
-      <Button onClick={() => router.push("/example")}>To Example</Button>
       <Link href="/example">
         <a>To Example</a>
       </Link>
+      {isMobile && <CloseNavbarButton />}
     </>
   );
 };

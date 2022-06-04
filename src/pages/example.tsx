@@ -13,7 +13,7 @@ const Example = () => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   await new Promise((resolve) => {
-    setTimeout(resolve, 8000);
+    setTimeout(resolve, 2000);
   });
 
   return {

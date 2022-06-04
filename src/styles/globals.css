@@ -22,4 +22,17 @@
 
     @apply bg-soft-black-300 m-0;
   }
+
+  .hamburger-inner::before,
+  .hamburger-inner::after,
+  .hamburger-inner {
+    background-color: rgb(243 244 246) !important;
+    opacity: 1;
+    width: 30px !important;
+    height: 3px !important;
+  }
+
+  .hamburger {
+    padding: 5px !important;
+  }
 }

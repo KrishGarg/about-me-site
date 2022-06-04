@@ -1,17 +1,14 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { FC, useEffect, useState, useRef } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import type { AnimationProps } from "framer-motion/types/motion/types";
-import { RecoilRoot, useRecoilValue } from "recoil";
+import { FC, useEffect, useRef } from "react";
+import { AnimatePresence, motion, Variants } from "framer-motion";
+import { RecoilRoot } from "recoil";
 import LoadingBar, { LoadingBarRef } from "react-top-loading-bar";
 
-import Navbar from "@/components/Navbar";
-import Loading from "@/components/Loading";
+import Sidebar from "@/components/Sidebar";
+import useHandleLoadingBar from "@/hooks/useHandleLoadingBar";
 
-import { loading as loadingState } from "@/lib/state";
-
-const pageVariant: AnimationProps["variants"] = {
+const pageVariant: Variants = {
   initial: {
     x: "-100vw",
   },
@@ -41,71 +38,22 @@ const Page: FC = ({ children }) => {
 };
 
 const App: FC<AppProps> = ({ Component, pageProps, router }) => {
-  const [isPageChanging, setIsPageChanging] = useState(false);
-  const [isLoadingAnimationDone, setIsLoadingAnimationDone] = useState(true);
-  const [lastRoute, setLastRoute] = useState("");
-
-  const loading = useRecoilValue(loadingState);
-
   const loadingRef = useRef<null | LoadingBarRef>(null);
 
-  useEffect(() => {
-    // watching router just for the edge case of router taking longer than loading animation
-    const handleRouteStart = (
-      currentRoute: string,
-      info: { shallow: boolean }
-    ) => {
-      if (info.shallow) return;
-      // Only trigger loading if route changed
-      if (currentRoute === lastRoute) return;
-      setLastRoute(currentRoute);
-      setIsPageChanging(true);
-      setIsLoadingAnimationDone(false);
-      (loadingRef.current as any)?.continuousStart();
-    };
-
-    const handleRouteEnd = () => {
-      setIsPageChanging(false);
-      if (!loading) setIsLoadingAnimationDone(true);
-      loadingRef.current?.complete();
-    };
-
-    router.events.on("routeChangeStart", handleRouteStart);
-    router.events.on("routeChangeComplete", handleRouteEnd);
-    router.events.on("routeChangeError", handleRouteEnd);
-    return () => {
-      router.events.off("routeChangeStart", handleRouteStart);
-      router.events.off("routeChangeComplete", handleRouteEnd);
-      router.events.off("routeChangeError", handleRouteEnd);
-    };
-  }, [router, lastRoute, loading]);
+  useHandleLoadingBar(loadingRef);
 
   return (
-    <>
-      {!loading && <LoadingBar color="#232b2b" height={4} ref={loadingRef} />}
-      <Navbar />
-      <div className="mx-2">
+    <div className="md:flex">
+      <Sidebar />
+      <div className="mx-2 p-4">
+        <LoadingBar color="#1a1a1a" height={4} ref={loadingRef} />
         <AnimatePresence exitBeforeEnter={true}>
-          {loading ? (
-            !isPageChanging && isLoadingAnimationDone ? (
-              <Page key={router.route}>
-                <Component {...pageProps} />
-              </Page>
-            ) : (
-              <Loading
-                key="loading"
-                setIsLoadingAnimationDone={setIsLoadingAnimationDone}
-                howLong={2000}
-              />
-            )
-          ) : (
-            <Page key={router.route}>
-              <Component {...pageProps} />
-            </Page>
-          )}
+          <Page key={router.route}>
+            <Component {...pageProps} />
+          </Page>
         </AnimatePresence>
       </div>
-    </>
+    </div>
   );
 };
 
