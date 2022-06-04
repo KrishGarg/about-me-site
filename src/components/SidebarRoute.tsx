@@ -12,7 +12,7 @@ const SidebarRoute: FC<Props> = ({ route: { icon: Icon, name, path } }) => {
   return (
     <Link href={path}>
       <a
-        className={`hover:bg-soft-black-450 focus-visible:bg-soft-black-450 transition-all rounded-md w-full ${
+        className={`hover:bg-soft-black-450 focus-visible:bg-soft-black-450 transition-all rounded-md w-full select-none ${
           pathname === path && "bg-soft-black-500"
         }`}
       >

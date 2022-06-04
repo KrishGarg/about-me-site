@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FC, MouseEventHandler } from "react";
+import { FC } from "react";
 
 const Logo: FC = () => {
   return (

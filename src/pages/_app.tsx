@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { FC, useEffect, useRef } from "react";
+import { FC, useRef } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { RecoilRoot } from "recoil";
 import LoadingBar, { LoadingBarRef } from "react-top-loading-bar";

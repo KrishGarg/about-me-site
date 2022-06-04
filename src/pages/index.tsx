@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 
-import CloseNavbarButton from "@/components/CloseNavbar";
+import CloseSidebarButton from "@/components/CloseSidebar";
 import useIsMobile from "@/hooks/useIsMobile";
 
 const Home: NextPage = () => {
@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       <Link href="/example">
         <a>To Example</a>
       </Link>
-      {isMobile && <CloseNavbarButton />}
+      {isMobile && <CloseSidebarButton />}
     </>
   );
 };

@@ -1,10 +1,10 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useRef } from "react";
 import { motion, useAnimation, Variants } from "framer-motion";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 import Logo from "./Logo";
-import { navbar as navbarState } from "@/lib/state";
-import CloseNavbarButton from "./CloseNavbar";
+import { sidebar as sidebarState } from "@/lib/state";
+import CloseSidebarButton from "./CloseSidebar";
 import useIsMobile from "@/hooks/useIsMobile";
 import sidebarRoutes from "@/lib/sidebarRoutes";
 import SidebarRoute from "./SidebarRoute";
@@ -18,24 +18,42 @@ const variants: Variants = {
   },
 };
 
-const Navbar: FC = () => {
+const Sidebar: FC = () => {
   const isMobile = useIsMobile();
   const controls = useAnimation();
-  const navbar = useRecoilValue(navbarState);
+  const [sidebar, setSidebar] = useRecoilState(sidebarState);
+  const componentDivRef = useRef(null);
 
   useEffect(() => {
     if (isMobile) {
-      if (!navbar) controls.start("hidden");
+      if (!sidebar) {
+        controls.start("hidden");
+      } else {
+        controls.start("visible");
+      }
     } else {
-      controls.start("visible");
+      controls.set("visible");
     }
-  }, [isMobile, controls, navbar]);
+  }, [isMobile, controls, sidebar]);
 
   useEffect(() => {
-    if (navbar) {
-      controls.start("visible");
-    }
-  }, [navbar, controls]);
+    const handler = (ev: MouseEvent) => {
+      if (!isMobile) return;
+      if (!sidebar) return;
+      if (
+        componentDivRef.current &&
+        !ev.composedPath().includes(componentDivRef.current)
+      ) {
+        // clicked somewhere away from sidebar
+        setSidebar((cur) => !cur);
+      }
+    };
+
+    document.addEventListener("click", handler);
+    return () => {
+      document.removeEventListener("click", handler);
+    };
+  }, [sidebar, setSidebar, isMobile]);
 
   return (
     <motion.div
@@ -43,12 +61,13 @@ const Navbar: FC = () => {
       animate={controls}
       transition={{ duration: 0.5 }}
       className="h-screen min-w-[13rem] md:min-w-[12rem] absolute md:static bg-soft-black-400 z-10 flex items-center flex-col"
+      ref={componentDivRef}
     >
       <div className="flex justify-evenly items-center flex-col md:block">
         <div className="mr-2 md:mr-0">
           <Logo />
         </div>
-        {isMobile && <CloseNavbarButton />}
+        {isMobile && <CloseSidebarButton />}
       </div>
       <div className="flex flex-col gap-2 mt-4 w-full">
         {sidebarRoutes.map((route) => (
@@ -59,4 +78,4 @@ const Navbar: FC = () => {
   );
 };
 
-export default Navbar;
+export default Sidebar;

@@ -1,17 +1,17 @@
 import { useRecoilState } from "recoil";
 
-import { navbar as navbarState } from "@/lib/state";
+import { sidebar as sidebarState } from "@/lib/state";
 
-const CloseNavbarButton = () => {
-  const [navbar, setNavbar] = useRecoilState(navbarState);
+const CloseSidebarButton = () => {
+  const [sidebar, setSidebar] = useRecoilState(sidebarState);
   return (
     <button
       className={`hamburger text-gray-100 ${
-        navbar && "is-active"
+        sidebar && "is-active"
       } hamburger--spin`}
       type="button"
       onClick={() => {
-        setNavbar((cur) => !cur);
+        setSidebar((cur) => !cur);
       }}
     >
       <span className="hamburger-box">
@@ -21,4 +21,4 @@ const CloseNavbarButton = () => {
   );
 };
 
-export default CloseNavbarButton;
+export default CloseSidebarButton;
