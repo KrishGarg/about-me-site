@@ -1,9 +1,8 @@
 import { FC, useEffect, useRef } from "react";
-import { motion, useAnimation, Variants } from "framer-motion";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { m, useAnimation, Variants } from "framer-motion";
 
 import Logo from "./Logo";
-import { sidebar as sidebarState } from "@/lib/state";
+import useStore from "@/lib/state";
 import CloseSidebarButton from "./CloseSidebar";
 import useIsMobile from "@/hooks/useIsMobile";
 import sidebarRoutes from "@/lib/sidebarRoutes";
@@ -23,8 +22,10 @@ let firstLoadDone = false;
 const Sidebar: FC = () => {
   const isMobile = useIsMobile();
   const controls = useAnimation();
-  const [sidebar, setSidebar] = useRecoilState(sidebarState);
   const componentDivRef = useRef<HTMLDivElement>(null);
+
+  const sidebar = useStore((state) => state.sidebar);
+  const setSidebar = useStore((state) => state.setSidebar);
 
   useEffect(() => {
     if (isMobile) {
@@ -52,7 +53,7 @@ const Sidebar: FC = () => {
         !ev.composedPath().includes(componentDivRef.current)
       ) {
         // clicked somewhere away from sidebar
-        setSidebar((cur) => !cur);
+        setSidebar(false);
       }
     };
 
@@ -69,7 +70,7 @@ const Sidebar: FC = () => {
   }, []);
 
   return (
-    <motion.div
+    <m.div
       variants={variants}
       animate={controls}
       transition={{ duration: 0.5 }}
@@ -89,7 +90,7 @@ const Sidebar: FC = () => {
           <SidebarRoute key={route.path} route={route} />
         ))}
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

@@ -1,5 +1,5 @@
-import { useMediaQuery } from "@mui/material";
+import { useMedia } from "react-use";
 
-const useIsMobile = () => useMediaQuery("(max-width: 768px)");
+const useIsMobile = () => useMedia("(max-width: 768px)");
 
 export default useIsMobile;

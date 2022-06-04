@@ -1,17 +1,18 @@
-import { useRecoilState } from "recoil";
-
-import { sidebar as sidebarState } from "@/lib/state";
+import useStore from "@/lib/state";
 
 const CloseSidebarButton = () => {
-  const [sidebar, setSidebar] = useRecoilState(sidebarState);
+  const sidebar = useStore((state) => state.sidebar);
+  const toggleSidebar = useStore((state) => state.toggleSidebar);
+
   return (
     <button
       className={`hamburger text-gray-100 ${
         sidebar && "is-active"
       } hamburger--spin`}
       type="button"
-      onClick={() => {
-        setSidebar((cur) => !cur);
+      onClick={(ev) => {
+        ev.stopPropagation();
+        toggleSidebar();
       }}
     >
       <span className="hamburger-box">

@@ -1,6 +1,15 @@
-import { atom } from "recoil";
+import create from "zustand";
 
-export const sidebar = atom({
-  key: "sidebar",
-  default: false,
-});
+interface State {
+  sidebar: boolean;
+  toggleSidebar: () => void;
+  setSidebar: (to: boolean) => void;
+}
+
+const useStore = create<State>((set) => ({
+  sidebar: false,
+  toggleSidebar: () => set((state) => ({ sidebar: !state.sidebar })),
+  setSidebar: (to) => set((_) => ({ sidebar: to })),
+}));
+
+export default useStore;

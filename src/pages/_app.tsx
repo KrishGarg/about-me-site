@@ -1,8 +1,13 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { FC, useRef } from "react";
-import { AnimatePresence, motion, Variants } from "framer-motion";
-import { RecoilRoot } from "recoil";
+import {
+  AnimatePresence,
+  m,
+  Variants,
+  LazyMotion,
+  domAnimation,
+} from "framer-motion";
 import LoadingBar, { LoadingBarRef } from "react-top-loading-bar";
 
 import Sidebar from "@/components/Sidebar";
@@ -26,14 +31,14 @@ const pageVariant: Variants = {
 
 const Page: FC = ({ children }) => {
   return (
-    <motion.div
+    <m.div
       variants={pageVariant}
       initial="initial"
       animate="animate"
       exit="exit"
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 };
 
@@ -57,11 +62,13 @@ const App: FC<AppProps> = ({ Component, pageProps, router }) => {
   );
 };
 
+const loadFeatures = () => import("@/lib/features").then((res) => res.default);
+
 const ToExportApp: FC<AppProps> = (props) => {
   return (
-    <RecoilRoot>
+    <LazyMotion features={loadFeatures}>
       <App {...props} />
-    </RecoilRoot>
+    </LazyMotion>
   );
 };
 
