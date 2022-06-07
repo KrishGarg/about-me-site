@@ -1,5 +1,7 @@
 import { useMedia } from "react-use";
 
-const useIsMobile = () => useMedia("(max-width: 768px)");
+export const CHECK_IF_MOBILE_QUERY = "(max-width: 768px)";
+
+const useIsMobile = () => useMedia(CHECK_IF_MOBILE_QUERY, false);
 
 export default useIsMobile;

@@ -1,12 +1,12 @@
 import { FC, useEffect, useRef } from "react";
-import { m, useAnimation, Variants } from "framer-motion";
+import { motion, useAnimation, Variants } from "framer-motion";
 
 import Logo from "./Logo";
 import useStore from "@/lib/state";
 import CloseSidebarButton from "./CloseSidebar";
-import useIsMobile from "@/hooks/useIsMobile";
 import sidebarRoutes from "@/lib/sidebarRoutes";
 import SidebarRoute from "./SidebarRoute";
+import useIsMobile, { CHECK_IF_MOBILE_QUERY } from "@/hooks/useIsMobile";
 
 const variants: Variants = {
   hidden: {
@@ -40,7 +40,12 @@ const Sidebar: FC = () => {
         controls.start("visible");
       }
     } else {
-      controls.set("visible");
+      // as default media query is set to false, on first load, it will always go in else.
+      firstLoadDone = true;
+      // checking again because of hydration mismatch issues.
+      const { matches } = window.matchMedia(CHECK_IF_MOBILE_QUERY);
+
+      if (!matches) controls.start("visible");
     }
   }, [isMobile, controls, sidebar]);
 
@@ -70,10 +75,11 @@ const Sidebar: FC = () => {
   }, []);
 
   return (
-    <m.div
+    <motion.div
       variants={variants}
       animate={controls}
       transition={{ duration: 0.5 }}
+      initial="hidden"
       className={`h-screen min-w-[13rem] md:min-w-[12rem] absolute md:static bg-soft-black-400 z-10 flex items-center flex-col ${
         isMobile && "hidden"
       }`}
@@ -90,7 +96,7 @@ const Sidebar: FC = () => {
           <SidebarRoute key={route.path} route={route} />
         ))}
       </div>
-    </m.div>
+    </motion.div>
   );
 };
 
