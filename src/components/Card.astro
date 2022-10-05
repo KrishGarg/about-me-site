@@ -9,10 +9,11 @@ const { image, alt, title } = Astro.props;
 ---
 
 <div
-  class="flex flex-col min-w-[80vw] md:min-w-0 md:max-w-lg bg-teal-600 p-6 rounded align-middle"
+  class="flex flex-col min-w-[80vw] md:min-w-0 md:max-w-md bg-teal-600 p-6 rounded align-middle md:focus:scale-105 md:hover:scale-105 transition-all focus:outline-none focus:ring focus:ring-teal-800"
+  tabindex="0"
 >
   <div>
-    <img src={image} alt={alt} class="block m-[-0.8rem]" />
+    <img src={image} alt={alt} class="block" />
   </div>
   <div>
     <h1 class="text-4xl text-center mb-4">{title}</h1>

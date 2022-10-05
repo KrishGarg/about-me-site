@@ -1,7 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import desk from "../static/desk.svg";
 import Card from "../components/Card.astro";
+
+import desk from "../static/desk.svg";
+import growth from "../static/growth.svg";
+import skills from "../static/skills.svg";
+import worklife from "../static/work-life.svg";
 ---
 
 <Layout title="Welcome to the Paradise.">
@@ -19,19 +23,19 @@ import Card from "../components/Card.astro";
     />
   </div>
   <div class="flex flex-wrap mt-8 justify-evenly gap-8">
-    <Card alt="test img" image={desk} title="Test Title">
+    <Card alt="growth" image={growth} title="Growth">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde amet laborum
       laboriosam magni. Similique quae voluptatibus ullam labore mollitia,
       officiis, repudiandae itaque modi quo assumenda culpa a nihil vitae,
       tempora laboriosam harum.
     </Card>
-    <Card alt="test img" image={desk} title="Test Title">
+    <Card alt="skills" image={skills} title="Skills">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde amet laborum
       laboriosam magni. Similique quae voluptatibus ullam labore mollitia,
       officiis, repudiandae itaque modi quo assumenda culpa a nihil vitae,
       tempora laboriosam harum.
     </Card>
-    <Card alt="test img" image={desk} title="Test Title">
+    <Card alt="life" image={worklife} title="Life">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde amet laborum
       laboriosam magni. Similique quae voluptatibus ullam labore mollitia,
       officiis, repudiandae itaque modi quo assumenda culpa a nihil vitae,
