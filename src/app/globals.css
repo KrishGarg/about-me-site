@@ -7,3 +7,24 @@
     text-wrap: balance;
   }
 }
+
+.custom-shape-divider-bottom-1724496545 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: translateY(1px);
+}
+
+.custom-shape-divider-bottom-1724496545 svg {
+  position: relative;
+  display: block;
+  width: calc(191% + 1.3px);
+  height: 146px;
+}
+
+.custom-shape-divider-bottom-1724496545 .shape-fill {
+  @apply fill-cyan-300;
+}
